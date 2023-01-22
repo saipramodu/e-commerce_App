@@ -39,4 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## NextJS Tailwind CSS e commerce website like Amazon
 
+1. Introduction
+2. Install tools
+3. Create Next App
+
 Creating a e commerce webiste for NextJS practice
