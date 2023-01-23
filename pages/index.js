@@ -1,16 +1,24 @@
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css';
 import Layout from '@/Components/Layout';
-
-const inter = Inter({ subsets: ['latin'] });
+import ProductItem from '@/Components/ProductItem';
+import { data } from '../utils/data';
 
 export default function Home() {
+  const { products } = data;
+  const allProducts = products.map((items) => {
+    return (
+      <div key={items.slug}>
+        <ProductItem products={items} />
+      </div>
+    );
+  });
   return (
-    <>
-      <Layout>
-        <div>Home Page</div>
-      </Layout>
-    </>
+    // The Homepage is built in component ProductItem and then called here
+    <Layout title={'Homepage'}>
+      {/* Gap is fro grid spacing */}
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+        {allProducts}
+      </div>
+    </Layout>
   );
 }
